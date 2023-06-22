@@ -26,8 +26,7 @@ class CreateLinkedList:
     
 class PrintLinkedList:
     # @staticmethod
-    def print_linkedlist(arr):
-        head = CreateLinkedList.create_linkedlist(arr)
+    def print_linkedlist(head):
         curr = head
         while curr:
             print(curr.value, end=" ")

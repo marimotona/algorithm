@@ -6,3 +6,30 @@ class LinkedListNode:
 
     def __str__(self) -> str:
         return str(self.value)
+    
+
+class CreateLinkedList:
+    # @staticmethod
+    def create_linkedlist(arr):
+        if not arr:
+            return None
+        
+        head = LinkedListNode(arr[0])
+        curr = head
+
+        for i in range(1, len(arr)):
+            new_node = LinkedListNode(arr[i])
+            curr.next = new_node
+            curr = new_node
+
+        return head
+    
+class PrintLinkedList:
+    # @staticmethod
+    def print_linkedlist(arr):
+        head = CreateLinkedList.create_linkedlist(arr)
+        curr = head
+        while curr:
+            print(curr.value, end=" ")
+            curr = curr.next
+        print()

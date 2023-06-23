@@ -9,9 +9,17 @@ def cycle_list(node):
         fast = fast.next.next
 
         if slow == fast:
-            return slow.value
+            break
+    
+    if fast is None or fast.next is None:
+        return False
+    
+    slow = node
+    while slow != fast:
+        slow = slow.next
+        fast = fast.next
         
-    return None
+    return slow.value
 
 
 # cycle_node = CreateLinkedList.create_linkedlist([7, 1, 6, 5, 2, 6, 5, 2, 6])

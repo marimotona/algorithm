@@ -37,8 +37,8 @@ def check_string2(s1:str, s2:str) -> bool:
         
     return True
 
-print(check_string2('apple', 'alepp'))
-print(check_string2('apple', 'appla'))
+# print(check_string2('apple', 'alepp'))
+# print(check_string2('apple', 'appla'))
 
 def check_string3(s1:str, s2:str) -> bool:
     if len(s1) != len(s2):
@@ -61,5 +61,30 @@ def check_string3(s1:str, s2:str) -> bool:
 
     return len(map) == 0
     
-print(check_string3('apple', 'alepp'))
-print(check_string3('apple', 'appla'))
+# print(check_string3('apple', 'alepp'))
+# print(check_string3('apple', 'appla'))
+
+
+def table_string(s1:str, s2:str):
+    if len(s1) != len(s2):
+        return False
+    
+    map = {}
+    for char in s1:
+        if char not in map:
+            map[char] = 1
+        else:
+            map[char] += 1
+
+    for char in s2:
+        if char not in map:
+            return False
+        else:
+            map[char] -= 1
+            if map[char] < 0:
+                return False
+            
+    return True
+
+print(table_string('apple', 'alepp'))
+print(table_string('apple', 'appla'))
